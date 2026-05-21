@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="es">
+    <title>Formulario Registro Usuarios</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Estilos.css" rel="stylesheet" type="text/css" />
+    <!-- El enlace al CSS para que funcionen los estilos -->
+    <script src="Aplicacion.js"></script>
+    <!-- El enlace al Javascript para que se ejecuten las funciones -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Formulario de Registro</h1>
+        </div>
+        <!-- Todo el formulario no es más que un volcado de lo visto en evaluaciones pasadas-->
+        <form id="registro">
+
+            <input type="text" id="nombre" placeholder="Nombre de usuario" required>
+            <div id="nombre-error" class="error"></div>
+            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+            <div id="correo-error" class="error"></div>
+            <input type="password" id="password" name="contraseña" placeholder="Contraseña" required>
+            <div id="password-error" class="error"></div>
+            <br>
+            <button type="button" id="showpass" onclick="mostrarContrasena()">Mostrar</button><br>
+            <input type="password" id="confirmedpass" name="contraseñaconfirmada" placeholder="Confirmar contraseña" required>
+            <br>
+            <div id="confirmedpass-error" class="error"></div>
+            <br>
+            <button type="button" id="registrar" onclick="validateForm()">Registrarse</button>
+        </form>
+           <br>
+           <!-- Para el teclado virtual se ha utilizado como base el ejercicio de la calculadora -->
+        <div class="row">
+            <div class="tecla" onclick="addCharacter('1')">1</div>
+            <div class="tecla" onclick="addCharacter('2')">2</div>
+            <div class="tecla" onclick="addCharacter('3')">3</div>
+            <div class="tecla" onclick="addCharacter('4')">4</div>
+            <div class="tecla" onclick="addCharacter('5')">5</div>
+            <div class="tecla" onclick="addCharacter('6')">6</div>
+            <div class="tecla" onclick="addCharacter('7')">7</div>
+            <div class="tecla" onclick="addCharacter('8')">8</div>
+            <div class="tecla" onclick="addCharacter('9')">9</div>
+            <div class="tecla" onclick="addCharacter('0')">0</div>
+            <div class="tecla" onclick="addCharacter('Q')">Q</div>
+        </div>
+
+        <div class="row">
+            <div class="tecla" onclick="addCharacter('W')">W</div>
+            <div class="tecla" onclick="addCharacter('E')">E</div>
+            <div class="tecla" onclick="addCharacter('R')">R</div>
+            <div class="tecla" onclick="addCharacter('T')">T</div>
+            <div class="tecla" onclick="addCharacter('Y')">Y</div>
+            <div class="tecla" onclick="addCharacter('U')">U</div>
+            <div class="tecla" onclick="addCharacter('I')">I</div>
+            <div class="tecla" onclick="addCharacter('O')">O</div>
+            <div class="tecla" onclick="addCharacter('P')">P</div>
+            <div class="tecla" onclick="addCharacter('A')">A</div>
+            <div class="tecla" onclick="addCharacter('S')">S</div>
+        </div>
+
+        <div class="row">
+            <div class="tecla" onclick="addCharacter('D')">D</div>
+            <div class="tecla" onclick="addCharacter('F')">F</div>
+            <div class="tecla" onclick="addCharacter('G')">G</div>
+            <div class="tecla" onclick="addCharacter('H')">H</div>
+            <div class="tecla" onclick="addCharacter('J')">J</div>
+            <div class="tecla" onclick="addCharacter('K')">K</div>
+            <div class="tecla" onclick="addCharacter('L')">L</div>
+            <div class="tecla" onclick="addCharacter('Z')">Z</div>
+            <div class="tecla" onclick="addCharacter('X')">X</div>
+            <div class="tecla" onclick="addCharacter('C')">C</div>
+            <div class="tecla" onclick="addCharacter('V')">V</div>
+        </div>
+
+        <div class="row">
+            <div class="tecla" onclick="addCharacter('B')">B</div>
+            <div class="tecla" onclick="addCharacter('N')">N</div>
+            <div class="tecla" onclick="addCharacter('M')">M</div>
+            <div class="tecla" onclick="addCharacter('@')">@</div>
+            <div class="tecla" onclick="addCharacter('.')">.</div>
+            <div class="tecla" onclick="addCharacter('_')">_</div>
+            <div class="tecla" onclick="addCharacter('-')">-</div>
+            <div class="tecla" id="teclaRetroceso" onclick="removeCharacter()">&larr;</div>
+            <!-- La tecla de retroceso es especial. No funciona exactamente igual como la C en la 
+            calculadora, así que había que introducirle una función explicada en el Javascript -->
+        </div>
+    </div>
+</body>
+
+</html>

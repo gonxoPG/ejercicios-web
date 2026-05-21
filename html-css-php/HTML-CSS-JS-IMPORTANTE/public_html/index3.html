@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de Registro</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .container {
+                max-width: 300px;
+                width: 100%;
+                text-align: center;
+            }
+            .form-container {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            input[type="text"], input[type="email"], input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+            }
+            input[type="submit"] {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+            #welcome-message {
+                display: none;
+                font-size: 18px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="header">
+                <h2>Formulario de Registro</h2>
+            </div>
+
+            <div class="form-container">
+                <form id="registration-form">
+                    <input type="text" id="name" placeholder="Nombre">
+                    <input type="email" id="email" placeholder="Correo electrónico">
+                    <input type="submit" value="Enviar" onclick="submitForm()">
+                </form>
+                <div id="welcome-message"></div>
+            </div>
+        </div>
+
+        <script>
+        // Define la función 'submitForm'.
+            function submitForm() {
+                // Obtiene el valor actual del campo de entrada con ID 'name' y lo almacena en la variable 'nameInput'.
+                const nameInput = document.getElementById('name').value;
+
+                // Obtiene el elemento del DOM con ID 'welcome-message' y lo almacena en la variable 'welcomeMessage'.
+                const welcomeMessage = document.getElementById('welcome-message');
+
+                // Establece el contenido de texto del elemento 'welcomeMessage' a un saludo personalizado que incluye el nombre ingresado en el campo de formulario.
+                welcomeMessage.textContent = `¡Bienvenido, ${nameInput}! Gracias por registrarte.`;
+
+                // Cambia el estilo del elemento 'welcomeMessage' para asegurarse de que se muestre en la página, estableciendo su propiedad 'display' a 'block'.
+                welcomeMessage.style.display = 'block';
+
+                // Llama a 'event.preventDefault()' para evitar que el formulario se envíe de la manera convencional (es decir, no se recarga la página ni se envían los datos del formulario al servidor). Esto permite que la lógica de JavaScript maneje el envío del formulario.
+                event.preventDefault();
+            }
+        </script>
+
+    </body>
+</html>

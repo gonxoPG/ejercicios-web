@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de contacto</title>
+  <link rel="stylesheet" href="css/estilos2.css" />
+</head>
+
+<body>
+  <form>
+    <h1>Formulario de Contacto</h1>
+    <!-- nombre -->
+    <p>Nombre: <input type="text" name="nombre" /></p>
+    <!-- dirección de correo -->
+    <p>Correo electrónico: <input type="email" name="email" /></p>
+    <!-- mensaje de texto -->
+    <p>
+      Comentario:
+      <textarea name="texto" rows="4" cols="70" placeholder="Escribe lo que quieras..."></textarea>
+    </p>
+
+    <!-- Enviar -->
+    <p>
+      <input type="submit" value="Enviar" onclick="alert('¡Enviado con éxito!')" />
+    </p>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora Básica</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .calculator {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 20px;
+            }
+            .row {
+                display: flex;
+            }
+            .button {
+                flex: 1;
+                padding: 10px;
+                margin: 5px;
+                text-align: center;
+                cursor: pointer;
+                border: 1px solid #ccc;
+                background-color: #f0f0f0;
+                transition: background-color 0.3s ease;
+            }
+            .button:hover {
+                background-color: #e0e0e0;
+            }
+            .result {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="calculator">
+            <input type="text" class="result" id="result" readonly>
+            <!--
+            El atributo readonly en HTML es utilizado para indicar que un campo de entrada (input) o área de texto (textarea) es de 
+            solo lectura. Esto significa que el usuario no puede modificar el valor del campo, aunque puede seleccionarlo y copiarlo. 
+            Sin embargo, a diferencia del atributo disabled, un campo de entrada con el atributo readonly todavía será enviado con el formulario.
+            -->
+            
+            <div class="row">
+                <div class="button" onclick="appendToResult('1')">1</div>
+                <div class="button" onclick="appendToResult('2')">2</div>
+                <div class="button" onclick="appendToResult('3')">3</div>
+                <div class="button" onclick="appendToResult('+')">+</div>
+            </div>
+            <div class="row">
+                <div class="button" onclick="appendToResult('4')">4</div>
+                <div class="button" onclick="appendToResult('5')">5</div>
+                <div class="button" onclick="appendToResult('6')">6</div>
+                <div class="button" onclick="appendToResult('-')">-</div>
+            </div>
+            <div class="row">
+                <div class="button" onclick="appendToResult('7')">7</div>
+                <div class="button" onclick="appendToResult('8')">8</div>
+                <div class="button" onclick="appendToResult('9')">9</div>
+                <div class="button" onclick="appendToResult('*')">*</div>
+            </div>
+            <div class="row">
+                <div class="button" onclick="appendToResult('0')">0</div>
+                <div class="button" onclick="clearResult()">C</div>
+                <div class="button" onclick="calculateResult()">=</div>
+                <div class="button" onclick="appendToResult('/')">/</div>
+            </div>
+        </div>
+
+        <script>
+        // Define una función para agregar un valor al final del valor actual en el campo 'result'.
+            function appendToResult(value) {
+                // Obtiene el elemento del DOM con el ID 'result' y añade el valor proporcionado al final de su valor actual.
+                document.getElementById('result').value += value;
+            }
+
+        // Define una función para limpiar el contenido del campo 'result'.
+            function clearResult() {
+                // Obtiene el elemento del DOM con el ID 'result' y establece su valor a una cadena vacía, efectivamente borrando cualquier cosa que estuviera allí.
+                document.getElementById('result').value = '';
+            }
+
+        // Define una función para calcular el resultado de la expresión en el campo 'result' y mostrar ese resultado en el mismo campo.
+            function calculateResult() {
+                // Utiliza eval para evaluar la expresión matemática contenida en el valor del elemento 'result' y almacena el resultado.
+                const result = eval(document.getElementById('result').value);
+                // Actualiza el valor del elemento 'result' con el resultado de la evaluación.
+                document.getElementById('result').value = result;
+            }
+
+        </script>
+
+    </body>
+</html>

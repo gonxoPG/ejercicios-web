@@ -1,0 +1,70 @@
+html, body, main {
+    margin: 25px;
+    padding: 0;
+    height: 530px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box
+  } 
+
+  .sc-izquierda {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5f6fa;
+    padding: 20px;
+    padding-bottom: 0;
+    text-align: center;
+    border-right: 2px solid #000000;
+    border-style: groove;
+  }
+  
+.sc-izquierda img {
+  width: 250px;
+  height: fit-content;
+  max-height: 90%;
+}
+
+  
+  /* La columna derecha */
+  .sc-derecha {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px 40px;
+  }
+  
+  /* Texto descriptivo */
+  .sc-derecha p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  button{
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 0px;
+    font-family: 'Arial', sans-serif;
+    font-size: medium;
+    transition-duration: 0.4s;
+    background-color: #0076d799;
+  }
+
+  button:hover{
+    background-color: #c4e1f8;
+     border-color: #0078d7;
+     transition: background-color 1s ease, border-color 1s ease;
+  }
